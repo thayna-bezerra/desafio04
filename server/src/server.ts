@@ -1,13 +1,16 @@
 import fastify from 'fastify'
+import { PrismaClient } from '@prisma/client'
 
 const app = fastify()
+const prisma = new PrismaClient()
 
 // HTTP Method: GET, POST, PUT, PATCH, DELETE;
 
 // criando rota
-app.get('/hello', () => {
-  // metodo get: acessando o endereço pelo navegador
-  return 'hello world'
+app.get('/users', async () => {
+  const users = await prisma.user.findMany()
+
+  return users
 })
 
 // promises
