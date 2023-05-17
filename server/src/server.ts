@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import fastify from 'fastify'
 import { PrismaClient } from '@prisma/client'
 
