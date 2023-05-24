@@ -1,20 +1,11 @@
 /* eslint-disable prettier/prettier */
 import fastify from 'fastify'
-import { PrismaClient } from '@prisma/client'
+import { memoriesRoutes } from './routes/memories'
 
 const app = fastify()
-const prisma = new PrismaClient()
 
-// HTTP Method: GET, POST, PUT, PATCH, DELETE;
+app.register(memoriesRoutes)
 
-// criando rota
-app.get('/users', async () => {
-  const users = await prisma.user.findMany()
-
-  return users
-})
-
-// promises
 app
   .listen({
     port: 3333,
