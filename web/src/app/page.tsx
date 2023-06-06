@@ -2,6 +2,7 @@ import { Copyright } from '../components/Copyright'
 import { EmptyMemories } from '../components/EmptyMemories'
 import { Hero } from '../components/Hero'
 import { SignIn } from '../components/SignIn'
+import 'tailwindcss/tailwind.css'
 
 export default function Home() {
   return (
